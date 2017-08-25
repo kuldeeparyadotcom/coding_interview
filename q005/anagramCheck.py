@@ -32,14 +32,14 @@ def is_anagram(str1, str2):
     
 
     #Use data strucutre List as single place to compare
-    anagram_checker = [True]*128 #Empty list with default references to True
+    anagram_checker = [0]*128 #Empty list with default references to Integer Object 0
 
     logging.debug("Traversing first string: %s" %first)
     for c in first: #Traverse every character in first string
         logging.debug("Processing character %s" %c)
         if c == ' ': #Ignore spaces
             continue
-        anagram_checker[ord(c)] = False #For each character c, set corresponding reference to False at index ord(c)
+        anagram_checker[ord(c)] += 1 #For each occurrence of character c, increment value by 1 at index ord(c)
     logging.debug("First string traversal completed: %s" %str(anagram_checker))
 
 
@@ -49,13 +49,13 @@ def is_anagram(str1, str2):
         logging.debug("Processing character %s" %c)
         if c == ' ': #Ignore spaces
             continue
-        anagram_checker[ord(c)] = True #For each character c, set corresponding reference to True at index ord(c)
+        anagram_checker[ord(c)] -= 1 #For each occurrence of character c, decrement value by 1 at index ord(c)
     logging.debug("First string traversal completed: %s" %str(anagram_checker))
 
 
     #Check list anagram_checker
     for item in anagram_checker: #Traverse anagram_checker list
-        if not item: #If any item is found to be False that means provided strings are not anagrams
+        if item: #If any item is found to be non zero that means provided strings are not anagrams
             return False
     else:
         return True
