@@ -18,16 +18,16 @@ def is_anagram(str1, str2):
                 False - if provided strings are not anagrams
     """
     logging.debug("Lowercase first string")
-    first = str1.lower() #Lowercase first string
+    first = str1.replace(' ','').lower() #Get rid of spaces and lowercase first string
     logging.debug("Lowered case to: %s" % first)
 
     logging.debug("Lowercase second string")
-    second = str2.lower() #lowercase second string
+    second = str2.replace(' ','').lower() #Get rid of spaces and lowercase second string
     logging.debug("Lowered case to: %s" % second)
 
     #Litmus test
     #Provided strings are not anagrams if number of charactes in both are different
-    if len(set(first)) != len(set(second)):
+    if len(first) != len(second):
         return False
     
 
@@ -37,8 +37,6 @@ def is_anagram(str1, str2):
     logging.debug("Traversing first string: %s" %first)
     for c in first: #Traverse every character in first string
         logging.debug("Processing character %s" %c)
-        if c == ' ': #Ignore spaces
-            continue
         anagram_checker[ord(c)] += 1 #For each occurrence of character c, increment value by 1 at index ord(c)
     logging.debug("First string traversal completed: %s" %str(anagram_checker))
 
@@ -47,8 +45,6 @@ def is_anagram(str1, str2):
     logging.debug("Traversing second string: %s" %second)
     for c in second: #Traverse every character in second string
         logging.debug("Processing character %s" %c)
-        if c == ' ': #Ignore spaces
-            continue
         anagram_checker[ord(c)] -= 1 #For each occurrence of character c, decrement value by 1 at index ord(c)
     logging.debug("First string traversal completed: %s" %str(anagram_checker))
 
