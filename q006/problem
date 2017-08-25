@@ -1,0 +1,6 @@
+sentence reversal problem
+
+input: "this is awesome"
+output: "awesome is this"
+
+Contraints - No leading or trailing space should be considered
