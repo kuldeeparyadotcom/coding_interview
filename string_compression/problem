@@ -1,0 +1,12 @@
+Compress given string
+Expected input - Only [a-z][A-Z]
+
+For example - 
+Input - AABBBCCCCDDDDD
+Output - A1B3C4D5
+
+Note - False string compression allowed
+For example - 
+Input - AAB
+Output - A2B1
+
