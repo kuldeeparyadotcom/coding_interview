@@ -1,0 +1,26 @@
+#!/usr/bin/env python
+# vim: tabstop=8 expandtab shiftwidth=4 softtabstop=4
+
+"""
+Purpose - Test SelectionSort program
+"""
+
+import unittest
+import SelectionSort
+
+class SelectionSortTestCase(unittest.TestCase):
+    
+    def test_edge_case_empty_input_list(self): #Exepcted to return input_list as it is
+        self.assertTrue(SelectionSort.selection_sort([]) == [])
+
+    def test_edge_case_one_item_input_list(self): #Expected to return input_list as it is
+        self.assertTrue(SelectionSort.selection_sort([1]) == [1])
+
+    def test_reversed_input_list(self):
+        self.assertTrue(SelectionSort.selection_sort([5, 4, 3, 2, 1]) == [1, 2, 3, 4, 5])
+
+    def test_random_input_list(self):
+        self.assertTrue(SelectionSort.selection_sort([5, 3, 7, 2]) == [2, 3, 5, 7])
+
+if __name__ == "__main__":
+    unittest.main()
