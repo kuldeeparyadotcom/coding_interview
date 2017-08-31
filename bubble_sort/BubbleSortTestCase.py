@@ -17,7 +17,10 @@ class BubbleSortTestCase(unittest.TestCase):
         self.assertTrue(BubbleSort.bubble_sort([1]) == [1])
 
     def test_reversed_input_list(self):
-        self.assertTrue(BubbleSort.bubble_sort([5, 4, 3, 2, 1]))
+        self.assertTrue(BubbleSort.bubble_sort([5, 4, 3, 2, 1]) == [1, 2, 3, 4, 5])
+
+    def test_random_input_list(self):
+        self.assertTrue(BubbleSort.bubble_sort([5, 3, 7, 2]) == [2, 3, 5, 7])
 
 if __name__ == "__main__":
     unittest.main()

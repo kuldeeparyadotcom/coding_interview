@@ -9,7 +9,7 @@ Output - A sorted list
 
 import logging
 
-logging.basicConfig(level=logging.DEBUG)
+logging.basicConfig(level=logging.CRITICAL)
 
 def bubble_sort(input_list): #expects a list of integers
 
