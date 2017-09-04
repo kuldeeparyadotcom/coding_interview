@@ -1,0 +1,14 @@
+Problem - A list of numbers is given. A target number (integer) is given. Write a function that returns a boolean value if any two numbers in list sum up the given target number.
+
+Input -
+List of integers
+target integer
+
+Output - 
+True if any two integers in given list sum up given target integer
+False if no two numbers in given list sum up given target integer
+
+Assumption - 
+1. No duplicate number is allowed in input list of integers
+2. Each number can be used only once
+
