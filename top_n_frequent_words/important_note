@@ -1,0 +1,4 @@
+Outcome of both the approaches may be different due to the defition of "word delimiter".
+For example -
+Approach 1 splits words from a line using space as separator i.e. line.split()
+Appraoch 2 uses regular expression re.compile(r'\w+') to define a word
